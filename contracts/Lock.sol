@@ -6,6 +6,8 @@ pragma solidity ^0.8.9;
 
 contract Lock {
     uint public unlockTime;
+    //AKR:
+    //uint public amount;
     address payable public owner;
 
     event Withdrawal(uint amount, uint when);
@@ -15,9 +17,18 @@ contract Lock {
             block.timestamp < _unlockTime,
             "Unlock time should be in the future"
         );
-
         unlockTime = _unlockTime;
         owner = payable(msg.sender);
+
+        /*
+        require(
+            amount <= owner.balance,
+            "You may only store as many funds as you own."
+        );
+        amount = _amount;
+        //transfer balance from owner to contract
+        //reduce owner balance
+        */
     }
 
     function withdraw() public {
