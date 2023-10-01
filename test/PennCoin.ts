@@ -36,10 +36,10 @@ describe("PennCoin", function () {
     });
     describe("Transfers", function() {
         describe("transfer", function() {
-            it("Should send the funds from the sender to the receiver", async function () {
+            it("Should transfer the funds from the sender to the receiver", async function () {
                 console.log("TEST LOG");
                 const {pennCoin, owner, otherAccount} = await loadFixture(deployPennCoinFixture);
-                const pcnTotalSupply = await pennCoin.totalSupply();
+                //const pcnTotalSupply = await pennCoin.totalSupply();
 
                 const amount = BigInt(100);
                 
@@ -47,6 +47,39 @@ describe("PennCoin", function () {
                 const otherBalanceBefore = await pennCoin.balanceOf(otherAccount.address);
 
                 await pennCoin.connect(owner).transfer(otherAccount.address, amount);
+
+                const ownerBalanceAfter = await pennCoin.balanceOf(owner.address);
+                const otherBalanceAfter = await pennCoin.balanceOf(otherAccount.address);
+                
+                expect((ownerBalanceBefore-ownerBalanceAfter) == amount);
+                expect((otherBalanceAfter-otherBalanceBefore) == amount);
+            });
+        });
+
+        describe("approve & transferFrom", function() {
+            it("Should approve the specified amount of tokens and change spender's allowance", async function () {
+                const {pennCoin, owner, otherAccount} = await loadFixture(deployPennCoinFixture);
+                const amount = BigInt(100);
+
+                const otherAllowanceBefore = await pennCoin.allowance(owner.address, otherAccount.address);
+
+                await pennCoin.approve(otherAccount, amount);
+
+                const otherAllowanceAfter = await pennCoin.allowance(owner.address, otherAccount.address);
+
+                expect((otherAllowanceAfter-otherAllowanceBefore) == amount);
+            });
+
+            it("Should transfer the funds from the sender to the receiver", async function () {
+                const {pennCoin, owner, otherAccount} = await loadFixture(deployPennCoinFixture);
+
+                const amount = BigInt(100);
+                await pennCoin.approve(owner, amount);
+                
+                const ownerBalanceBefore = await pennCoin.balanceOf(owner.address);
+                const otherBalanceBefore = await pennCoin.balanceOf(otherAccount.address);
+
+                await pennCoin.transferFrom(owner.address, otherAccount.address, amount);
 
                 const ownerBalanceAfter = await pennCoin.balanceOf(owner.address);
                 const otherBalanceAfter = await pennCoin.balanceOf(otherAccount.address);
