@@ -1,0 +1,15 @@
+{
+	"attributes" : [
+    	{
+        	"trait_type" : "City",
+        	"value" : "Beirut"
+    	},
+    	{
+        	"trait_type" : "Country",
+        	"value" : "Lebanon"
+    	}
+	],
+	"description" : "The Beirut Skyline",
+	"image" : "ipfs://QmXE4N9QMbvLxPNh933a2H942TsuwFAEprgYTvsRWGBqqH",
+	"name" : "Beirut"
+}

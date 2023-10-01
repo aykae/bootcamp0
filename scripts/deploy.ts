@@ -17,6 +17,12 @@ async function main() {
       lockedAmount
     )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.target}`
   );
+
+  const pennFT = await ethers.deployContract("PennFT");
+
+  await pennFT.waitForDeployment();
+
+  console.log('PennFT deployed.');
 }
 
 // We recommend this pattern to be able to use async/await everywhere
