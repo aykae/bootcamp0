@@ -37,7 +37,6 @@ describe("PennCoin", function () {
     describe("Transfers", function() {
         describe("transfer", function() {
             it("Should transfer the funds from the sender to the receiver", async function () {
-                console.log("TEST LOG");
                 const {pennCoin, owner, otherAccount} = await loadFixture(deployPennCoinFixture);
                 //const pcnTotalSupply = await pennCoin.totalSupply();
 
