@@ -4,9 +4,9 @@ async function main() {
   const currentTimestampInSeconds = Math.round(Date.now() / 1000);
   const unlockTime = currentTimestampInSeconds + 60;
 
-  const lockedAmount = ethers.parseEther("0.001");
 
   /*
+  const lockedAmount = ethers.parseEther("0.001");
   const lock = await ethers.deployContract("Lock", [unlockTime], {
     value: lockedAmount,
   });
@@ -21,10 +21,14 @@ async function main() {
   */
 
   const pennFT = await ethers.deployContract("PennFT");
-
   await pennFT.waitForDeployment();
-
   console.log('PennFT deployed.');
+
+  /*
+  const auction = await ethers.deployContract("Auction", [10, 1000]);
+  await auction.waitForDeployment();
+  console.log('Auction deployed.');
+  */
 }
 
 // We recommend this pattern to be able to use async/await everywhere
