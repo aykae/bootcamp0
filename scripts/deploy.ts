@@ -6,6 +6,7 @@ async function main() {
 
   const lockedAmount = ethers.parseEther("0.001");
 
+  /*
   const lock = await ethers.deployContract("Lock", [unlockTime], {
     value: lockedAmount,
   });
@@ -17,6 +18,7 @@ async function main() {
       lockedAmount
     )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.target}`
   );
+  */
 
   const pennFT = await ethers.deployContract("PennFT");
 
