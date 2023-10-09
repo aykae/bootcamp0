@@ -24,11 +24,9 @@ async function main() {
   await pennFT.waitForDeployment();
   console.log('PennFT deployed.');
 
-  /*
   const auction = await ethers.deployContract("Auction", [10, 1000]);
   await auction.waitForDeployment();
   console.log('Auction deployed.');
-  */
 }
 
 // We recommend this pattern to be able to use async/await everywhere

@@ -43,6 +43,7 @@ contract Auction {
     mapping(uint => AuctionInfo) public auctionInfos;
 
     //event StartAuction(uint)
+    event StartAuction(uint auctionId, uint auctionLength, uint minBid, uint endTime);
 
 	constructor(uint _houseFee, uint _maxAuctionLength) {
 		// todo: finish this
@@ -102,9 +103,10 @@ contract Auction {
         auctionInfos[maxAuctionId].seller = payable(msg.sender);
 
         // transfer nft to contract owner (so that e.g., seller can't transfer NFT during auction)
-        nftContractInstance.safeTransferFrom(auctionInfos[maxAuctionId].seller, owner, auctionInfos[maxAuctionId].nftId);
+        nftContractInstance.safeTransferFrom(auctionInfos[maxAuctionId].seller, owner, _nftId);
 
         //TODO: emit
+        emit StartAuction(maxAuctionId, _auctionLength, _minBid, auctionInfos[maxAuctionId].endTime);
 
         return maxAuctionId;
 	}
