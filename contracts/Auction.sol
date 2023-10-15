@@ -49,6 +49,7 @@ contract Auction {
 		// todo: finish this
         // AKR:
         require(_houseFee <= 100, "house fee must be less than or equal to 100");
+        require(_maxAuctionLength > 0, "max auction length must be non-zero");
 
         owner = payable(msg.sender);
         houseFee = _houseFee;
@@ -184,8 +185,6 @@ contract Auction {
 
         // transfer NFT from seller to winner
         nftContractInstance.safeTransferFrom(owner, auctionInfos[_auctionId].winner, auctionInfos[_auctionId].nftId);
-
-        // TODO: emit EndAuction
 
         return payout;
 	}    	

@@ -12,7 +12,7 @@ async function main() {
 
     const nft0 = await pennFT.connect(owner).MintNFT(owner.address, METADATA_URI || '');
     console.log(await pennFT.ownerOf(0) == owner.address);
-    //
+
     const auc = await ethers.deployContract("Auction", [10, 1000]);
     await auc.waitForDeployment();
     console.log('Auction deployed.');
