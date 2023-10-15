@@ -94,7 +94,6 @@ contract Auction {
         require(_minBid > 0, "auction must have a non-zero minimum bid");
         require(nftContractInstance.ownerOf(_nftId) == msg.sender, "you do not own the nft which you are putting up for auction");
         
-
         maxAuctionId++;
         auctionInfos[maxAuctionId].auctionLength = _auctionLength;
         auctionInfos[maxAuctionId].minBid = _minBid;
@@ -104,7 +103,7 @@ contract Auction {
         auctionInfos[maxAuctionId].seller = payable(msg.sender);
 
         // transfer nft to contract owner (so that e.g., seller can't transfer NFT during auction)
-        nftContractInstance.safeTransferFrom(auctionInfos[maxAuctionId].seller, owner, _nftId);
+        nftContractInstance.safeTransferFrom(auctionInfos[maxAuctionId].seller, owner, auctionInfos[maxAuctionId].nftId);
 
         //TODO: emit
         emit StartAuction(maxAuctionId, _auctionLength, _minBid, auctionInfos[maxAuctionId].endTime);
@@ -125,7 +124,7 @@ contract Auction {
         uint currentBid = auctionInfos[_auctionId].bids[msg.sender];
         uint newBid = currentBid + msg.value;
 
-        require(newBid >= auctionInfos[_auctionId].minBid, "bid is below minimum bid for this auction.");
+        require(newBid >= auctionInfos[_auctionId].minBid, "bid is below minimum bid for this auction");
 
         if (currentBid == 0) {
             auctionInfos[_auctionId].bidders.push(msg.sender);
@@ -149,7 +148,7 @@ contract Auction {
         // AKR:
         require(_auctionId > 0, "auction does not exist");
         require(_auctionId <= maxAuctionId, "auction does not exist");
-        require(auctionInfos[_auctionId].endTime >= block.timestamp, "auction must be over to claim bid");
+        require(auctionInfos[_auctionId].endTime <= block.timestamp, "auction must be over to claim bid");
 
         uint bidAmt = auctionInfos[_auctionId].bids[msg.sender];
         require(msg.sender != auctionInfos[_auctionId].winner, "you are the winner, please end the auction to receive your NFT");
@@ -170,7 +169,7 @@ contract Auction {
         // AKR:
         require(_auctionId > 0, "auction does not exist");
         require(_auctionId <= maxAuctionId, "auction does not exist");
-        require(auctionInfos[_auctionId].endTime >= block.timestamp, "auction must be over to claim NFT");
+        require(auctionInfos[_auctionId].endTime <= block.timestamp, "auction must be over to claim NFT");
         address winner = auctionInfos[_auctionId].winner;
         require(winner == msg.sender, "only the winner of the auction can end it");
 
