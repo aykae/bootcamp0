@@ -20,9 +20,11 @@ async function main() {
   );
   */
 
+  /*
   const pennFT = await ethers.deployContract("PennFT");
   await pennFT.waitForDeployment();
   console.log('PennFT deployed.');
+  */
 
   const auction = await ethers.deployContract("Auction", [10, 1000]);
   await auction.waitForDeployment();
