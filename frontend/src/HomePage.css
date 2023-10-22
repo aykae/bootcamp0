@@ -1,0 +1,54 @@
+.topbar {
+	background-color: purple;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.title-text {
+	color: white;
+}
+
+.box {
+	background-color: grey;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+.horizontal-box {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.vertical-margin {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.cards-container {
+	padding: 0.5rem;
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	flex-wrap: wrap;
+	row-gap: 0.5rem;
+}
+
+.image {
+	object-fit: cover;
+	width: 300px;
+	height: 300px;
+}
+
+h3 {
+	width: fit-content;
+}
+
+.card {
+	background-color: purple;
+	padding: 0.5rem;
+}
+
+.btn {
+    text-align: center;
+}

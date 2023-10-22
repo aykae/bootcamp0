@@ -1,0 +1,195 @@
+await auction.endAuction(10);
+await auction.endAuction(9);
+await auction.endAuction(11);
+await auction.endAuction(10);
+await auction.claim(10);
+await auction.maxAuctionId.staticCall();
+    await auction.endAuction(11);
+    await auction.endAuction(10);
+    await auction.bid(10, {value: 15});
+    await auction.bid(aucId, {value: 15});
+    await auction.endAuction(10);
+    await auction.getHighestBid(10);
+    await auction.getHighestBid(11);
+    await auction.endAuction(aucId);
+    const aucId = await auction.maxAuctionId.staticCall();
+    const auction = await ethers.getContractAt("Auction", AUCTION_CONTRACT_ADDRESS || "");
+const { NFT_CONTRACT_ADDRESS, PUBLIC_KEY, NFT_TOKEN_ID, AUCTION_CONTRACT_ADDRESS } = process.env
+await auction.maxAuctionId.staticCall();
+aucId = await auction.maxAuctionId.staticCallResult();
+aucId = auction.maxAuctionId.staticCallResult();
+aucId = auction.maxAuctionId.staticCallResult()
+const aucId = auction.maxAuctionId.staticCallResult().values;
+await auction.maxAuctionId.staticCallResult().values
+await auction.maxAuctionId.staticCallResult()[0]
+await auction.maxAuctionId.staticCallResult()
+console.log(await auction.maxAuctionId.staticCallResult());
+console.log(auction.maxAuctionId.staticCallResult());
+console.log(auction.maxAuctionId.staticCallResult);
+console.log(auction.maxAuctionId);
+console.log(auction.maxAuctionId == 5);
+auction.maxAuctionId.valueOf
+auction.maxAuctionId;
+  auction = await ethers.getContractAt("Auction", AUCTION_CONTRACT_ADDRESS || "");
+    const auction = await ethers.getContractAt("Auction", AUCTION_CONTRACT_ADDRESS || "");
+const { NFT_CONTRACT_ADDRESS, PUBLIC_KEY, NFT_TOKEN_ID, AUCTION_CONTRACT_ADDRESS } = process.env
+    const auction = await ethers.getContractAt("Auction", AUCTION_CONTRACT_ADDRESS || "");
+    await pennFT.approve(AUCTION_CONTRACT_ADDRESS || '', 0); auc = await auction.startAuction(NFT_CONTRACT_ADDRESS || '', NFT_TOKEN_ID || '', 100, 5);    await auction.connect(other).bid(1, {value: 10});    await auction.bid(1, {value: 15});
+ auc = await auction.startAuction(NFT_CONTRACT_ADDRESS || '', NFT_TOKEN_ID || '', 100, 5);    await auction.connect(other).bid(1, {value: 10});    await auction.bid(1, {value: 15});
+    await auction.connect(other).bid(1, {value: 10});
+auc = await auction.startAuction(NFT_CONTRACT_ADDRESS || '', NFT_TOKEN_ID || '', 100, 5);
+    await pennFT.approve(AUCTION_CONTRACT_ADDRESS || '', 0);
+auc = await auction.connect(me).startAuction(NFT_CONTRACT_ADDRESS || '', NFT_TOKEN_ID || '', 100, 5);
+    const auc = await auction.startAuction(NFT_CONTRACT_ADDRESS || '', NFT_TOKEN_ID || '', 100, 5);
+    const me = await provider.getSigner(PUBLIC_KEY || '');
+    const [other] = await ethers.getSigners();
+    const auction = await ethers.getContractAt("Auction", AUCTION_CONTRACT_ADDRESS || "");
+    const pennFT = await ethers.getContractAt("PennFT", NFT_CONTRACT_ADDRESS || "");
+const provider = await ethers.provider;
+const { NFT_CONTRACT_ADDRESS, PUBLIC_KEY, NFT_TOKEN_ID, AUCTION_CONTRACT_ADDRESS } = process.env
+await pennFT.setApprovalForAll(PUBLIC_KEY, true);
+    const me = await provider.getSigner(PUBLIC_KEY || '');
+await pennFT.ownerOf(0);
+auc = await auction.startAuction(NFT_CONTRACT_ADDRESS || '', NFT_TOKEN_ID || '', 100, 5);
+    const auc = await auction.startAuction(NFT_CONTRACT_ADDRESS || '', NFT_TOKEN_ID || '', 100, 5);
+await pennFT.ownerOf(0);
+    await auction.connect(other).bid(1, {value: 10});
+    const [other] = await ethers.getSigners();
+    await auction.connect(other).bid(1, {value: 10});
+auc = await auction.startAuction(NFT_CONTRACT_ADDRESS || '', NFT_TOKEN_ID || '', 10, 5);
+    const auc = await auction.startAuction(NFT_CONTRACT_ADDRESS || '', NFT_TOKEN_ID || '', 10, 5);
+    const auction = await ethers.getContractAt("Auction", AUCTION_CONTRACT_ADDRESS || "");
+    const auc = await auction.startAuction(NFT_CONTRACT_ADDRESS || '', NFT_TOKEN_ID || '', 10, 5);
+me = await provider.getSigner(PUBLIC_KEY || '');
+    const me = await provider.getSigner(PUBLIC_KEY || '');
+    const provider = await ethers.provider;
+    const me = await provider.getSigner(PUBLIC_KEY || '');
+await pennFT.ownerOf(0);
+pennFT.ownerOf(0);
+    const pennFT = await ethers.getContractAt("PennFT", NFT_CONTRACT_ADDRESS || "");
+const { NFT_CONTRACT_ADDRESS, PUBLIC_KEY, NFT_TOKEN_ID, AUCTION_CONTRACT_ADDRESS } = process.env
+    await pennFT.setApprovalForAll(NFT_CONTRACT_ADDRESS || '', true);
+    const [other] = await ethers.getSigners();
+auction.interface
+    const auction = await ethers.getContractAt("Auction", AUCTION_CONTRACT_ADDRESS || "");
+    const pennFT = await ethers.getContractAt("PennFT", NFT_CONTRACT_ADDRESS || "");
+    const provider = await ethers.provider;
+const { NFT_CONTRACT_ADDRESS, PUBLIC_KEY, NFT_TOKEN_ID, AUCTION_CONTRACT_ADDRESS } = process.env
+0xE5b95dD074f855Eb7c336CF02B7fC013DEa44930
+  const auction = await ethers.deployContract("Auction", [10, 1000]);
+ await auction.waitForDeployment();
+  const auction = await ethers.deployContract("Auction", [10, 1000]);
+const auc = await ethers.deployContract("Auction", [10, 1000]);
+await auc.waitForDeployment();
+const auc = await ethers.deployContract("Auction", [10, 1000]);
+nftResponse
+nftResponse.removedEvent();
+nftResponse.provider._eventListeners[0]
+nftResponse
+    const nftResponse = await nft0.wait();
+nft0
+const nft0 = await pennFT.connect(owner).MintNFT(owner.address, METADATA_URI || '');
+const { METADATA_URI } = process.env;
+    await pennFT.waitForDeployment();
+const pennFT = await ethers.deployContract("PennFT");
+const [owner, other] = await ethers.getSigners();
+owner.address
+const [owner, other] = await ethers.getSigners();
+await ethers.getSigners();
+const [owner] = await ethers.getSigners();
+[owner] = ethers.getSigners();
+const owner = ethers.getSigners();
+owner
+owner = ethers.getSigner();
+owner
+const owner = ethers.getSigner
+  const auc = await ethers.getContractAt("Auction", auction.target);
+ethers.provider
+await auc.startAuction(pftAddress, 0n, 100, 10);
+  const auc = await ethers.getContractAt("Auction", auction.target);
+  await auction.waitForDeployment();
+const auction = await ethers.deployContract("Auction", [10, 1000]);
+await pennFT.ownerOf(0n);
+pennFT.ownerOf(0n);
+  await pennFT.MintNFT(owner || '', 'ipfs://QmTo5Rv4x34AXYSyUHXC3SL3s4GXSzFhbL55kd2yrAtuyH' || '');
+  pennFT = await ethers.getContractAt("PennFT", pftAddress || '');
+  const pennFT = await ethers.getContractAt("PennFT", pftAddress || '');
+pftAddress = pennFT.target;
+pennFT.target
+  await pennFT.waitForDeployment();
+  await pennFT.waitForDeployment;
+  const pennFT = await ethers.deployContract("PennFT");
+owner.address
+const [owner, other] = await ethers.getSigners();
+await pennFT.balanceOf(PUBLIC_KEY);
+PUBLIC_KEY
+pennFT.balanceOf(PUBLIC_KEY);
+pennFT.balanceOf(msg.sender);
+pennFT.tokenURI(pftid.value);
+pftid.value
+pftid
+const pftid = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '');
+pennFT.tokenURI(0);
+  await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '');
+const { NFT_CONTRACT_ADDRESS, PUBLIC_KEY, METADATA_URI } = process.env;
+pennFT.tokenURI(0);
+const pennFT = await ethers.getContractAt("PennFT", '0x352E51Fb36eFA83887F13155779c488Aa14aCF35' || '');
+pennFT
+await auc.getHighestBid(1);
+auc = await ethers.getContractAt("Auction", "0x5fc8d32690cc91d4c39d9d3abcbd16989f875707");
+const auc = await ethers.getContractAt("Auction", "0x5fc8d32690cc91d4c39d9d3abcbd16989f875707");
+const auc = await ethers.getContractAt("Auction", 0x5fc8d32690cc91d4c39d9d3abcbd16989f875707);
+  await auction.waitForDeployment();
+  const auction = await ethers.deployContract("Auction", [10, 1000]);
+nft = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '');
+const nft = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '');
+const pennFT = await ethers.getContractAt("PennFT", NFT_CONTRACT_ADDRESS || '');
+const nft = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '');
+const { NFT_CONTRACT_ADDRESS, PUBLIC_KEY, METADATA_URI } = process.env;
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '');
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 250000000});
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 25000000});
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 2500000000});
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 2500000000000});
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 250000000000000});
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 25000000000000000});
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 2500000000000000000});
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 2500000000000000});
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 25000000000});
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 2500000000});
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 25000000});
+let
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 25000000}
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 250000000});
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 2500000004});
+nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 5000000});
+const nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '', {gasLimit: 5000000});
+const nftResult = await pennFT.MintNFT(PUBLIC_KEY || '', METADATA_URI || '');
+const {PUBLIC_KEY, METADATA_URI } = process.env;
+PUBLIC_KEY
+const {NFT_CONTRACT_ADDRESS, PUBLIC_KEY, METADATA_URI } = process.env;
+pennFT
+const pennFT = await ethers.getContractAt("PennFT", NFT_CONTRACT_ADDRESS);
+const {NFT_CONTRACT_ADDRESS} = process.env;
+pennFT
+const pennFT = await ethers.getContractAt("PennFT", NFT_CONTRACT_ADDRESS);
+NFT_CONTRACT_ADDRESS
+const {NFT_CONTRACT_ADDRESS} = process.env;
+NFT_CONTRACT_ADDRESS
+} = process.env;
+const {NFT_CONTRACT_ADDRESS
+process.env['NFT_CONTRACT_ADDRESS']
+process.env[userConfig
+const { NFT_CONTRACT_ADDRESS } = process.env;
+const { CONTRACT_ADDRESS } = process.env;
+const pennFT = await ethers.getContractAt("PennFT"
+uri = await contract.tokenURI(0);
+await contract.MintNFT(signer.address, 'QmXE4N9QMbvLxPNh933a2H942TsuwFAEprgYTvsRWGBqqH');
+contract = await ethers.getContractAt('PennFT', '0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0');
+signer = (await ethers.getSigners())[0]
+await ethers.provider.getBalance(signer.address)
+awaits ethers.provider.getBalance(signer.address)
+await contract.withdraw()
+contract = await ethers.getContractAt('Lock', '0x5fbdb2315678afecb367f032d93f642f64180aa3')
+await ethers.provider.getBalance(signer.address)
+signer = (await ethers.getSigners())[0]

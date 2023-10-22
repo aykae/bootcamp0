@@ -1,0 +1,16 @@
+.box {
+	background-color: grey;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+.container {
+	background-color: purple;
+    margin: 10% 20% 0% 20%;
+    padding: 1rem;
+}
+
+.btn {
+    text-align: center;
+    margin: 0% 30% 0% 30%;
+}
