@@ -1,7 +1,17 @@
+import { useEffect } from "react";
 import NFTCard from './NFTCard';
 import './NFTPage.css'
+import { useNavigate } from "react-router-dom";
 
 function NFTPage() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!window.ethereum.isConnected()) {
+            navigate('/connect-wallet')
+        }
+    }, []);
+
     return (
         <>
         <div className="page">
@@ -21,8 +31,8 @@ function NFTPage() {
                     </div>
                     <div className="card">
                         <div className="box-content">
-                        <h3 style={{textAlign: "right"}}>2 ETH</h3>
-                        <h3 style={{textAlign: "center"}}>Submit New Bid</h3>
+                            <h3 style={{textAlign: "right"}}>2 ETH</h3>
+                            <h3 style={{textAlign: "center"}}>Submit New Bid</h3>
                         </div>
                     </div>
                 </div>

@@ -1,8 +1,17 @@
-
+import { useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import NFTCard from './NFTCard';
 import './StartAuctionPage.css'
 
 function StartAuctionPage() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!window.ethereum.isConnected()) {
+            navigate('/connect-wallet')
+        }
+    }, []);
+
     return (
         <>
         <div className="container">
