@@ -11,9 +11,9 @@ interface IAuctionInfo {
 	auctionLength: number;
 	endTime: number;
 	minBid: number;
-	bids: Object;
-	bidders: Object;
-	seller: string;
+	// bids: Object;
+	// bidders: Object;
+	// seller: string;
 	winner: string;
 }
 
@@ -37,7 +37,14 @@ function HomePage() {
 		const contractAuctions = [];
 		for (let i = 1; i <= maxAuctionId; i++) {
 			const auctionInfo = await auctionContract.auctionInfos(i);
-			contractAuctions.push(auctionInfo);
+			contractAuctions.push({
+				nftContract: auctionInfo[4],
+				nftId: auctionInfo[5],
+				auctionLength: auctionInfo[0],
+				endTime: auctionInfo[3],
+				minBid: auctionInfo[1],
+				winner: auctionInfo[9]
+			});
 		}
 
 		setAuctions(contractAuctions);
@@ -66,7 +73,7 @@ return (
     	<div className='cards-container'>
         	{
             	auctions.map((auction, i) => (
-                	<NFTCard contractAddress={auction.nftContract} id={i} />))
+                	<NFTCard contractAddress={auction.nftContract} nftId={auction.nftId} id={i} />))
         	}
     	</div>
 	</div>
